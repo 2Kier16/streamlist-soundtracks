@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import StreamList from './components/StreamList';
+import Home from './components/Home';
 import Movies from './components/Movies';
 import Cart from './components/Cart';
 import About from './components/About';
@@ -18,7 +18,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<StreamList />} />
+        <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
