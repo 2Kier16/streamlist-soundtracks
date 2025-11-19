@@ -28,7 +28,7 @@ form input {
   border-radius: 6px;
   font-size: 1rem;
   background-color: #ffffff;
-  color: #333333
+  color: #333333;
 }
 
 form button {
@@ -59,15 +59,45 @@ li {
   margin: 10px 0;
   padding: 12px;
   border-radius: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
   display: flex;
-  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
+.entry-text {
+  flex: 1 1 60%;
+}
+
+.entry-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 li strong {
   color: #333333;
+}
+
+.soundtrack-note {
+  color: #333333;
+  font-size: 0.95rem;
+  opacity: 1;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: 4px;
+  opacity: 0.50;
+}
+.soundtrack-note em {
+  font-weight: 600;
+  color: #7209b7;
+}
+
+li.completed .soundtrack-note {
+  text-decoration: underline;
+  color: #333333;
+  opacity: .50;
+  font-style: italic;
 }
 
 .completed {
@@ -79,7 +109,6 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 8px;
   font-size: 1.2rem;
   color: #7209b7;
 }
@@ -87,3 +116,10 @@ button {
 button:hover {
   color: #560bad;
 }
+.music-icon {
+  color: #7209b7;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  opacity: 0.50;
+}
+

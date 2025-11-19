@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaEdit, FaTrash, FaCheckCircle, FaMusic } from 'react-icons/fa';
 import './Home.css';
 
 function Home() {
@@ -37,7 +36,12 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h2>🎵 StreamList: Movie Soundtrack Edition</h2>
+      <h2>
+        <i className="fas fa-film" style={{ marginRight: '8px' }}></i>
+        StreamList: Movie Soundtrack Edition
+        <i className="fas fa-music" style={{ marginLeft: '8px' }}></i>
+      </h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -57,17 +61,22 @@ function Home() {
       <ul>
         {list.map((item, index) => (
           <li key={index} className={item.completed ? 'completed' : ''}>
-            <strong>{item.title}</strong> — {item.notes}
-            <button onClick={() => handleComplete(index)} title="Mark as Favorite">
-              <FaCheckCircle />
-            </button>
-            <button onClick={() => handleEdit(index)} title="Edit Entry">
-              <FaEdit />
-            </button>
-            <button onClick={() => handleDelete(index)} title="Delete Entry">
-              <FaTrash />
-            </button>
-            <FaMusic style={{ marginLeft: '10px' }} />
+            <div className="entry-text">
+              <strong>{item.title}</strong>
+              <p className="soundtrack-note"><em>Notes:</em> {item.notes}</p>
+            </div>
+            <div className="entry-actions">
+              <button onClick={() => handleComplete(index)} title="Mark as Favorite">
+                <i className="fas fa-check-circle"></i>
+              </button>
+              <button onClick={() => handleEdit(index)} title="Edit Entry">
+                <i className="fas fa-edit"></i>
+              </button>
+              <button onClick={() => handleDelete(index)} title="Delete Entry">
+                <i className="fas fa-trash"></i>
+              </button>
+              <i className="fas fa-music music-icon"></i>
+            </div>
           </li>
         ))}
       </ul>
@@ -76,3 +85,4 @@ function Home() {
 }
 
 export default Home;
+
