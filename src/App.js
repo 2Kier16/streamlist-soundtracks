@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
-import Movies from './components/Movies';
+import Movies from './components/MovieSoundTracks';
 import Cart from './components/Cart';
 import About from './components/About';
 import './App.css';
@@ -27,4 +27,6 @@ function App() {
   );
 }
 
+
 export default App;
+
