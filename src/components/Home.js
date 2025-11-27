@@ -35,12 +35,15 @@ function Home() {
   };
 
   return (
-    <div className="home-container">
-      <h2>
+    <div className="home-page">
+       <h2 className="page-title">
         <i className="fas fa-film" style={{ marginRight: '8px' }}></i>
         StreamList: Movie Soundtrack Edition
         <i className="fas fa-music" style={{ marginLeft: '8px' }}></i>
       </h2>
+
+    <div className="home-container">
+     <p className="home-message">Add a Song or Album!</p>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -80,6 +83,7 @@ function Home() {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 }
