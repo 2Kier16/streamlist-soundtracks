@@ -114,7 +114,7 @@
   z-index: 1000;
   overflow-y: auto;
 
-  /* Appear animation (no JS class needed) */
+  /* Appear animation */
   animation: advAppear 0.25s ease both;
 }
 
