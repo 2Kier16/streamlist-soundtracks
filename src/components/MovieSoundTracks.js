@@ -24,53 +24,95 @@ function MovieSoundTracks() {
     loadAlbums("John Williams"); // composer of Imperial March
   }, []);
 
+  async function getSpotifyToken() {
+    const res = await fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization:
+          "Basic " +
+          btoa(
+            process.env.REACT_APP_SPOTIFY_CLIENT_ID +
+              ":" +
+              process.env.REACT_APP_SPOTIFY_CLIENT_SECRET
+          ),
+      },
+      body: "grant_type=client_credentials",
+    });
+    const data = await res.json();
+    return data.access_token;
+  }
+
   async function loadAlbums(term = "John Williams") {
     try {
       setLoading(true);
+      const token = await getSpotifyToken();
+
+      const query = `${term} soundtrack`;
       const res = await fetch(
-        `/api/v1/json/${process.env.REACT_APP_AUDIO_DB_KEY}/searchalbum.php?s=${encodeURIComponent(
-          term
-        )}`
+        `https://api.spotify.com/v1/search?q=${encodeURIComponent(
+          query
+        )}&type=album&limit=10`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
       const data = await res.json();
-      console.log("Album data:", data);
-      setAlbums(data.album || []);
+
+      if (data.albums && data.albums.items.length > 0) {
+        const albums = data.albums.items.map((album) => ({
+          id: album.id,
+          title: album.name,
+          artist: album.artists.map((a) => a.name).join(", "),
+          artwork: album.images[0]?.url || "",
+          spotifyUrl: album.external_urls.spotify,
+        }));
+        setAlbums(albums);
+        setError(null);
+      } else {
+        setAlbums([]);
+        setError("No albums found.");
+      }
     } catch (e) {
+      console.error("Error loading albums:", e);
       setError("Failed to load albums.");
     } finally {
       setLoading(false);
     }
   }
 
-  async function loadTracks(artist, album) {
+  async function loadTracks(albumId, albumName, artistName) {
     try {
+      const token = await getSpotifyToken();
       const res = await fetch(
-        `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${
-          process.env.REACT_APP_LASTFM_KEY
-        }&artist=${encodeURIComponent(artist)}&album=${encodeURIComponent(
-          album
-        )}&format=json`
+        `https://api.spotify.com/v1/albums/${albumId}/tracks`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
       const data = await res.json();
-      const list = data?.album?.tracks?.track || [];
-      setSelected({ artist, album });
-      setTracks(Array.isArray(list) ? list : [list].filter(Boolean));
-    } catch {
+      const list = data.items || [];
+      setSelected({ artist: artistName, album: albumName });
+      setTracks(list);
+    } catch (e) {
+      console.error("Error loading tracks:", e);
       setTracks([]);
     }
   }
 
   // Advanced search handler
   function handleAdvancedSearch() {
-    // For now, prioritize artist > album > year
     if (advArtist.trim()) {
       loadAlbums(advArtist);
     } else if (advAlbum.trim()) {
       loadAlbums(advAlbum);
     } else if (advYear.trim()) {
       loadAlbums(advYear);
+    } else if (advComposer.trim()) {
+      loadAlbums(advComposer);
+    } else if (advProducer.trim()) {
+      loadAlbums(advProducer);
     } else {
-      // fallback
       loadAlbums("John Williams");
     }
   }
@@ -118,8 +160,11 @@ function MovieSoundTracks() {
           {albums && albums.length > 0 ? (
             albums.map((album) => (
               <AlbumCard
-                key={album.idAlbum || album.id || album.strAlbum}
+                key={album.id}
                 album={album}
+                onSelect={() =>
+                  loadTracks(album.id, album.title, album.artist)
+                }
               />
             ))
           ) : (
@@ -135,7 +180,7 @@ function MovieSoundTracks() {
             </h3>
             <ul>
               {tracks.map((t, i) => (
-                <li key={t.name + i}>{t.name}</li>
+                <li key={t.id || i}>{t.name}</li>
               ))}
             </ul>
           </div>

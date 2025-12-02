@@ -29,7 +29,7 @@
   padding: 2rem;
   max-width: 700px;
   margin: auto;
-  background-color: #f3eaff;
+  background-color: #747178;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(114, 9, 183, 0.1);
 }
@@ -38,7 +38,7 @@
 /* Message above form */
 .home-message {
   font-size: 2rem;
-  color: #7209b7;
+  color: #222242;
   text-align: center;
   margin-bottom: 20px;
   font-weight: 600;
@@ -68,8 +68,8 @@ form button {
   align-items: center;
   gap: 6px;
   padding: 10px 16px;
-  background-color: #7209b7;
-  color: white;
+  background-color: #c080ff;
+  color: #222242;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -78,7 +78,8 @@ form button {
 }
 
 form button:hover {
-  background-color: #560bad;
+  background-color: #a04bf5;
+  color: #fff;
 }
 
 /* Separate search button */
@@ -174,6 +175,7 @@ li.completed .soundtrack-note {
   color: #7209b7;
 }
 
+
 .entry-actions button:hover {
   color: #c4a3ea;
 }
@@ -185,29 +187,51 @@ li.completed .soundtrack-note {
   opacity: 0.5;
 }
 
- /* Results styling */
+/* Search Results */
+.results-heading {
+  color: #000000; /* solid black */
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Individual result box */
 .results li {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
-  background-color: #2e2e4e;
+  background-color: #1e1e2e; /* deep purple-black */
   padding: 0.75rem;
   border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
-.results img {
-  border-radius: 4px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+/* Album info text */
+.result-info {
+  flex: 1;
+  color: #f0f0ff;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-.results div {
-  color: #e0e0ff;
-  font-size: 1.1rem;
+/* Spotify preview link */
+.spotify-link {
+  color: #8f4ff7;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 4px;
 }
 
-.results button {
-  margin-left: auto;
+.spotify-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Add to Cart button */
+.add-cart-btn {
   background-color: #c080ff;
   color: #222242;
   border: none;
@@ -215,13 +239,15 @@ li.completed .soundtrack-note {
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.results button:hover {
+.add-cart-btn:hover {
   background-color: #a04bf5;
   color: #fff;
 }
-/* Responsive design */
+
+/* Responsive Design */
 @media (max-width: 600px) {
   form input {
     flex: 1 1 100%;

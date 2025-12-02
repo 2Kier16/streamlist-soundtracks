@@ -26,6 +26,15 @@
   font-size: 1.2rem; /* prevent shrinking */
 }
 
+/* Page title */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000; /* solid black for clarity */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /* Album card */
 .album-card {
   display: flex;
@@ -57,13 +66,13 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #f5f5ff; /* brighter white for visibility */
 }
 
 .album-artist {
   margin: 4px 0 0;
   font-size: 1rem;
-  color: #ccc;
+  color: #d0d0ff; /* soft light purple for contrast */
 }
 
 .album-actions {
@@ -226,14 +235,23 @@
   width: 100%;
 }
 
+/* Track list heading */
+.tracks h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000; /* solid black to stand out */
+  margin-bottom: 12px;
+}
+
+/* Track tiles */
 .track-tile {
-  background-color: #1a1a1a;
+  background-color: #2e2e4e; /* deep purple background */
   padding: 10px;
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #eee;
+  color: #f0f0ff; /* light text for readability */
   font-size: 1.2rem;
 }
 
