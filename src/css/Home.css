@@ -6,6 +6,23 @@
   min-height: 80vh;
   padding: 2rem;
 }
+/*Introduction section */
+.intro-section {
+  margin: 24px auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: #2e2e4e;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #e0e0ff;
+  text-align: center;
+}
+
 
 /* Container styling */
 .home-container {
@@ -63,6 +80,33 @@ form button {
 form button:hover {
   background-color: #560bad;
 }
+
+/* Separate search button */
+.search-btn {
+  margin-top: 1rem;
+  background-color: #c080ff;
+  color: #222242;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #a04bf5;
+  color: #fff;
+}
+
+/* Error Message */
+.error-message {
+  color: #d90429;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 
 /* List styling */
 ul {
@@ -122,7 +166,7 @@ li.completed .soundtrack-note {
 }
 
 /* Action buttons */
-button {
+.entry-actions button {
   background: none;
   border: none;
   cursor: pointer;
@@ -130,7 +174,7 @@ button {
   color: #7209b7;
 }
 
-button:hover {
+.entry-actions button:hover {
   color: #c4a3ea;
 }
 
@@ -139,4 +183,53 @@ button:hover {
   font-size: 1.2rem;
   margin-left: 10px;
   opacity: 0.5;
+}
+
+ /* Results styling */
+.results li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  background-color: #2e2e4e;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.results img {
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+.results div {
+  color: #e0e0ff;
+  font-size: 1.1rem;
+}
+
+.results button {
+  margin-left: auto;
+  background-color: #c080ff;
+  color: #222242;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.results button:hover {
+  background-color: #a04bf5;
+  color: #fff;
+}
+/* Responsive design */
+@media (max-width: 600px) {
+  form input {
+    flex: 1 1 100%;
+  }
+  .intro-text {
+    font-size: 1.2rem;
+  }
+  .home-message {
+    font-size: 1.5rem;
+  }
 }

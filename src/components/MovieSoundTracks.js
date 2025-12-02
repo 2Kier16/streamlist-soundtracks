@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./MovieSoundTracks.css";
+import "../css/MovieSoundTracks.css";
 import AlbumCard from "./AlbumCard";
 
 function MovieSoundTracks() {

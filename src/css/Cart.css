@@ -1,10 +1,10 @@
+/* Cart Page Layout */
 .cart-page {
   padding: 2rem;
   color: #f5f5f5;
 }
 
-
-
+/* Cart Items */
 .cart-item {
   display: flex;
   align-items: center;
@@ -15,6 +15,11 @@
   background-color: #1a1a1a;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 6px rgba(192, 128, 255, 0.4);
 }
 
 .cart-cover {
@@ -44,9 +49,31 @@
   color: #ccc;
 }
 
-/* Remove button styling */
-.remove-btn {
-  margin-left: auto;
+/*  Price Styling */
+.cart-price {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7209b7;
+}
+
+/* Spotify Link */
+.spotify-link {
+  margin-top: 6px;
+  color: #c080ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.spotify-link:hover {
+  color: #a04bf5;
+  text-decoration: underline;
+}
+
+/* Remove Button */
+.cart-meta button {
+  margin-top: 10px;
   background-color: #c080ff; /* lavender base */
   color: #fff;
   border: none;
@@ -58,10 +85,11 @@
   transition: background-color 0.3s ease;
 }
 
-.remove-btn:hover {
-  background-color: #ff9f9f; /* pinkish hover */ 
+.cart-meta button:hover {
+  background-color: #ff9f9f; /* pinkish hover */
 }
 
+/* Cart Summary */
 .cart-summary {
   margin-top: 20px;
   font-weight: 600;
@@ -69,7 +97,7 @@
   color: #c080ff;
 }
 
-/* Responsive for small screens */
+/* Responsive Tweaks */
 @media (max-width: 600px) {
   .cart-item {
     flex-direction: column;
@@ -82,7 +110,7 @@
     margin-bottom: 10px;
   }
 
-  .remove-btn {
+  .cart-meta button {
     margin-left: 0;
     margin-top: 10px;
   }

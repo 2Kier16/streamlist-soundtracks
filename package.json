@@ -2,7 +2,7 @@
   "name": "streamlist-soundtracks",
   "version": "0.1.0",
   "private": true,
-    "proxy": "https://theaudiodb.com",
+  "proxy": "https://theaudiodb.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
@@ -19,8 +19,6 @@
     "react-router-dom": "^7.9.6",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
-
-
   },
   "scripts": {
     "start": "react-scripts start",

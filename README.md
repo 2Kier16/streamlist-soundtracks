@@ -13,6 +13,7 @@ Features
 - Responsive navigation bar with dynamic cart count and routing via React Router
 - Modular component structure for easy expansion
 - Custom color palette inspired by 2025 design trends
+- Jest + React Testing Library integration with passing test suites for add‑to‑cart and remove‑from‑cart flows
 
 Technologies Used
 - React (Hooks + Functional Components)
@@ -22,8 +23,10 @@ Technologies Used
 - JSX
 - Git & GitHub
 - External APIs:
-- TheAudioDB for album/soundtrack data
-- Last.fm for track listings
+  - TheAudioDB for album/soundtrack data
+  - Last.fm for track listings
+  - Spotify enrichment for album links and cover art
+- Jest + React Testing Library for automated UI testing
 
 Ethical Design Note
 Authentication is not yet implemented, but future versions will include secure password handling using hashing and salting techniques.
@@ -33,18 +36,20 @@ Current Limitations
 - Search results depend on what’s available in the free API catalog; some titles may not appear, while many composers and albums are fully indexed
 - Advanced search panel is styled and functional in the UI, but search logic is still being finalized
 - Track display logic for the View Tracks button is in progress
+- Spotify enrichment is mocked in tests but not yet fully wired for live API calls
 
 Project Status
 - Week 3 Deliverables: Cart system completed with album/track add, quantity adjustment, removal, and total price calculation. Cart contents persist via localStorage.
 - Advanced Search: Panel styled and functional, with multiple filter inputs; search logic integration in progress.
 - Navigation Bar: Dynamic cart count updates in real time.
 - Issues/Risks: Minor CSS nesting errors corrected; subscription duplication bug resolved.
+- Week 4 Deliverables: Jest test suite stabilized with global router mocks; App.test.js simplified; HomeCartFlow.test.js covers add and remove flows with passing results.
 - Next Steps: Finalize track display logic, polish styling, and prepare video demo for Week 5 submission.
 
 ## Installation
 Clone the repo and run it locally:
 
-
+```bash
 git clone https://github.com/2Kier16/streamlist-soundtracks.git
 cd streamlist-soundtracks
 npm install
