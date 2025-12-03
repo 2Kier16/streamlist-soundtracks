@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import '../css/Home.css';
 import { CartContext } from '../context/CartContext';
+import { useSubmit } from 'react-router-dom';
 
 function Home() {
   const [movieTitle, setMovieTitle] = useState('');
@@ -129,14 +130,17 @@ function Home() {
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Add soundtrack notes (optional)"
           />
-          <button type="submit">Add Manual Entry</button>
-        </form>
+          </form>
+          <div className='button-row'>
+            <button type="button" onClick={handleSubmit} className="search-btn"> Add Manual Entry</button>
+            
 
-        <button type="button" onClick={searchSoundtracks} className="search-btn">
-          Search Soundtracks
-        </button>
+            <button type="button" onClick={searchSoundtracks} className="search-btn">
+            Search Soundtracks
+            </button>
+          </div>
 
-        {error && <p className="error-message">{error}</p>}
+          {error && <p className="error-message">{error}</p>}
 
   {results.length > 0 && (
   <div className="results">

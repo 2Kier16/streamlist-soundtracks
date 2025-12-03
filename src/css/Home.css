@@ -63,7 +63,23 @@ form input {
   color: #333333;
 }
 
-form button {
+
+
+form button:hover {
+  background-color: #a04bf5;
+  color: #fff;
+}
+
+/* Separate search button */
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.search-btn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -74,25 +90,8 @@ form button {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #a04bf5;
-  color: #fff;
-}
-
-/* Separate search button */
-.search-btn {
-  margin-top: 1rem;
-  background-color: #c080ff;
-  color: #222242;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .search-btn:hover {
