@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from 'react-router-dom';
 import "../css/Cart.css";
 
 const Cart = () => {
@@ -48,6 +49,12 @@ const Cart = () => {
           </p>
         </>
       )}
+      <div style={{ marginTop: 20 }}>
+  <Link to="/checkout">
+    <button>Checkout</button>
+  </Link>
+</div>
+
     </div>
   );
 };

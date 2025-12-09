@@ -1,0 +1,10 @@
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Code blocks keep monospace */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+

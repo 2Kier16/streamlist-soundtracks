@@ -1,0 +1,13 @@
+{
+    "name": "StreamList Soundtracks",
+    "short_name": "StreamList",
+    "description": "Discover and search albums, view tracks, from movies, shows, and manage your cart with a polished dark theme.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1e1e2e",
+    "theme_color": "#7209b7",
+    "icons": [
+        { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png"},
+        { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png" }
+    ]
+}

@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
 import { CartContext } from '../context/CartContext';
+import { GoogleLogin } from '@react-oauth/google';
 import '../css/Navbar.css';
 
 function Navbar() {
-  const { user, login, logout } = useContext(AuthContext);
-  const { cart } = useContext(CartContext);
+  const { cart } = React.useContext(CartContext);
+  const user = localStorage.getItem('user');
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    window.location.href = '/'; // reload to show login screen
+  };
 
   return (
     <nav className="navbar">
@@ -19,9 +24,17 @@ function Navbar() {
       </ul>
       <div className="auth-section">
         {user ? (
-          <button onClick={logout}>Logout ({user.name})</button>
+          <button onClick={handleLogout}>Logout</button>
         ) : (
-          <button onClick={() => login('DemoUser')}>Login</button>
+          <GoogleLogin
+            onSuccess={credentialResponse => {
+              localStorage.setItem('user', JSON.stringify(credentialResponse));
+              window.location.href = '/';
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
         )}
       </div>
     </nav>
@@ -29,3 +42,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

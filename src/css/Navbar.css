@@ -1,54 +1,66 @@
+/* Navbar container */
 .navbar {
-  background-color: #2c2c44;
-  padding: 1rem 2rem;
+  background-color: #222242; /* match global dark theme */
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  box-sizing: border-box;
 }
 
+/* Logo */
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #c080ff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
+  color: #c080ff; 
+  font-size: 1.5rem;
+  font-weight: 700;
   margin: 0;
-  padding: 0;
 }
 
-.nav-links a {
+/* Navigation links */
+.nav-links li {
   background-color: transparent;
-  color: #c080ff; /* soft lavender text */
-  border: 2px solid #c080ff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  margin: 0;
+  padding: .2rem;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
 }
 
-.nav-links a:hover {
-  background-color: #c080ff;
-  color: #222242; /* dark text on lavender */
-}
-
-
-.auth-section button {
+.nav-links li a {
   background-color: #5c5c8a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active {
+  background-color: #c080ff;
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+
+/* Auth section buttons */
+.auth-section button {
+  background-color: #c080ff;
   color: white;
   border: none;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.auth-section button:hover {
+  background-color: #7a7ab0; /* lighter hover shade */
 }
