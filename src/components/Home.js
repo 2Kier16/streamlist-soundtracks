@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import '../css/Home.css';
 import { CartContext } from '../context/CartContext';
-import { useSubmit } from 'react-router-dom';
+
 
 function Home() {
   const [movieTitle, setMovieTitle] = useState('');
