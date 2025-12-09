@@ -1,6 +1,6 @@
-🎬🎵 StreamList: Movie Soundtrack Edition
+# StreamList: Movie Soundtrack Edition
 
-StreamList is a React‑based web app that lets users explore, catalog, and manage their favorite movie soundtracks and composers.  
+StreamList is a React‑based web app that lets users explore, catalog, and manage their favorite movie soundtracks and composers.
 Designed with a modern lavender‑and‑purple theme, intuitive navigation, and expressive iconography, StreamList is built for music lovers, film buffs, and anyone who wants to track the scores that move them.
 
 ---
@@ -14,7 +14,8 @@ Designed with a modern lavender‑and‑purple theme, intuitive navigation, and 
 - **Spotify enrichment** for album links and cover art, with direct “Preview on Spotify” buttons
 - **Graceful error handling** when searches return no results
 - **Responsive navigation bar** with dynamic cart count and routing via React Router
-- **Login/Logout buttons** in navigation (future feature) — planned for secure account creation and personalized soundtrack collections
+- **Google OAuth login/logout** integrated directly in the Navbar for session control
+- **Credit card checkout simulation** with validation (card format, expiry, CVV) and localStorage persistence
 - **Modular component structure** for easy expansion
 - **Custom color palette** inspired by 2025 design trends
 - **Jest + React Testing Library integration** with passing test suites for add‑to‑cart and remove‑from‑cart flows
@@ -25,7 +26,7 @@ Designed with a modern lavender‑and‑purple theme, intuitive navigation, and 
 - React (Hooks + Functional Components)
 - React Router DOM
 - React Icons
-- CSS Flexbox + Scoped Styling (`MovieSoundTracks.css`, `Home.css`)
+- CSS Flexbox + Scoped Styling (`MovieSoundTracks.css`, `Home.css`, `CreditCard.css`)
 - JSX
 - Git & GitHub
 - External APIs:
@@ -37,7 +38,8 @@ Designed with a modern lavender‑and‑purple theme, intuitive navigation, and 
 ---
 
 ## Ethical Design Note
-Authentication is not yet implemented, but future versions will include secure password handling using hashing and salting techniques.  
+Authentication now includes Google OAuth for demo purposes.  
+Future versions will expand to secure password handling using hashing and salting techniques.  
 These practices reflect Stage 1 and Stage 2 of password protection and align with ethical standards for user privacy and data security.
 
 ---
@@ -46,7 +48,8 @@ These practices reflect Stage 1 and Stage 2 of password protection and align wit
 - Search results depend on what’s available in the free Spotify catalog; some titles may not appear, while many composers and albums are fully indexed
 - Advanced search panel is styled and functional in the UI, but search logic is still being finalized
 - Track display logic for the *View Tracks* button is in progress
-- Login/Logout buttons are placeholders until account authentication is implemented
+- Credit card checkout is a **simulation only** — no real payment processing
+- Google OAuth login is demo‑level; personalized accounts and secure backend storage are future features
 
 ---
 
@@ -57,7 +60,8 @@ These practices reflect Stage 1 and Stage 2 of password protection and align wit
 - **Issues/Risks:** Minor CSS nesting errors corrected; subscription duplication bug resolved.
 - **Week 4 Deliverables:** Jest test suite stabilized with global router mocks; `App.test.js` simplified; `HomeCartFlow.test.js` covers add and remove flows with passing results.
 - **Week 5 Deliverables:** Spotify search integrated into Home and MovieSoundTracks pages; styling fixes applied for dark theme readability.
-- **Next Steps:** Finalize track display logic, polish styling, and complete login/logout feature for personalized accounts.
+- **Week 6 Deliverables:** Google OAuth login/logout flow implemented; CreditCard checkout simulation added with validation and localStorage persistence.
+- **Next Steps:** Finalize track display logic, polish styling, and expand authentication for personalized accounts.
 
 ---
 
