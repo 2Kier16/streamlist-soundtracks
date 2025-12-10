@@ -1,9 +1,19 @@
+/* Page Wrapper */
+.credit-card-page {
+  min-height: 100vh;
+  background-color: #222242; /* dark theme background */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
 /* Credit Card Checkout Layout */
 .credit-card-form {
   max-width: 500px;
   margin: 40px auto;
   padding: 2rem;
-  background-color: #747178; 
+  background-color: #747178;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(114, 9, 183, 0.1);
   font-family: 'Segoe UI', sans-serif;
@@ -12,7 +22,7 @@
 /* Heading */
 .credit-card-form h2 {
   text-align: center;
-  color: #222242; 
+  color: #222242;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
@@ -23,7 +33,7 @@
   margin-top: 12px;
   margin-bottom: 4px;
   font-weight: 500;
-  color: #e0e0ff; 
+  color: #e0e0ff;
 }
 
 /* Inputs */
@@ -43,7 +53,7 @@
   margin-top: 10px;
   width: 100%;
   padding: 12px;
-  background-color: #c080ff; 
+  background-color: #c080ff;
   color: #222242;
   border: none;
   border-radius: 6px;
@@ -60,7 +70,7 @@
 
 /* Error Message */
 .error-message {
-  color: #d90429; 
+  color: #d90429;
   font-weight: 600;
   text-align: center;
   margin-top: 1rem;
@@ -70,7 +80,7 @@
 .saved-card {
   margin-top: 20px;
   padding: 15px;
-  background-color: #2e2e4e; 
+  background-color: #2e2e4e;
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   color: #e0e0ff;
@@ -80,6 +90,5 @@
   display: block;
   margin-bottom: 8px;
   font-size: 1.2rem;
-  color: #c080ff; 
+  color: #c080ff;
 }
-

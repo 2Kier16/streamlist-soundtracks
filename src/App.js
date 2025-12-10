@@ -6,7 +6,8 @@ import Movies from './components/MovieSoundTracks';
 import Cart from './components/Cart';
 import About from './components/About';
 import CreditCard from './components/CreditCard';
-import { CartProvider } from './context/CartContext'; 
+import { CartProvider } from './context/CartContext';
+
 
 function LoginScreen() {
   return (
@@ -25,7 +26,8 @@ function ProtectedRoute({ children }) {
 
 function App() {
   return (
-    <CartProvider> 
+    <CartProvider>
+      <div style={{ minHeight: '100vh', backgroundColor: '#222242' }}>
       <Router>
         <Navbar />
         <Routes>
@@ -37,6 +39,7 @@ function App() {
           <Route path="/checkout" element={<ProtectedRoute><CreditCard /></ProtectedRoute>} />
         </Routes>
       </Router>
+      </div>
     </CartProvider>
   );
 }

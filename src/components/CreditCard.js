@@ -33,62 +33,61 @@ export default function CreditCard() {
     localStorage.setItem('paymentMethod', JSON.stringify(payload));
     setSaved(payload);
     setError('');
-
-    // Optional: clear inputs after save
-    // setName(''); setCardNumber(''); setExpiry(''); setCvv('');
   };
 
   return (
-    <div className="credit-card-form">
-      <h2>Checkout — Credit Card</h2>
-      <form onSubmit={handleSave}>
-        <label>Name on card</label>
-        <input
-          type="text"
-          placeholder="Name on card"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+    <div className="credit-card-page">
+      <div className="credit-card-form">
+        <h2>Checkout — Credit Card</h2>
+        <form onSubmit={handleSave}>
+          <label>Name on card</label>
+          <input
+            type="text"
+            placeholder="Name on card"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <label>Card number</label>
-        <input
-          type="text"
-          placeholder="1234 5678 9012 3456"
-          value={cardNumber}
-          onChange={handleCardChange}
-          maxLength={19}
-        />
+          <label>Card number</label>
+          <input
+            type="text"
+            placeholder="1234 5678 9012 3456"
+            value={cardNumber}
+            onChange={handleCardChange}
+            maxLength={19}
+          />
 
-        <label>Expiry (MM/YY)</label>
-        <input
-          type="text"
-          placeholder="MM/YY"
-          value={expiry}
-          onChange={(e) => setExpiry(e.target.value)}
-          maxLength={5}
-        />
+          <label>Expiry (MM/YY)</label>
+          <input
+            type="text"
+            placeholder="MM/YY"
+            value={expiry}
+            onChange={(e) => setExpiry(e.target.value)}
+            maxLength={5}
+          />
 
-        <label>CVV</label>
-        <input
-          type="text"
-          placeholder="CVV"
-          value={cvv}
-          onChange={(e) => setCvv(e.target.value.replace(/\D/g, '').slice(0, 3))}
-          maxLength={3}
-        />
+          <label>CVV</label>
+          <input
+            type="text"
+            placeholder="CVV"
+            value={cvv}
+            onChange={(e) => setCvv(e.target.value.replace(/\D/g, '').slice(0, 3))}
+            maxLength={3}
+          />
 
-        {error && <div className="error-message">{error}</div>}
-        <button type="submit">Save Card</button>
-      </form>
+          {error && <div className="error-message">{error}</div>}
+          <button type="submit">Save Card</button>
+        </form>
 
-      {saved && (
-        <div className="saved-card">
-          <strong>Saved Card:</strong>
-          <div>Name: {saved.name}</div>
-          <div>Card: {saved.cardNumber}</div>
-          <div>Expiry: {saved.expiry}</div>
-        </div>
-      )}
+        {saved && (
+          <div className="saved-card">
+            <strong>Saved Card:</strong>
+            <div>Name: {saved.name}</div>
+            <div>Card: {saved.cardNumber}</div>
+            <div>Expiry: {saved.expiry}</div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

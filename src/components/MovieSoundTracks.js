@@ -22,7 +22,6 @@ function MovieSoundTracks() {
   useEffect(() => {
     // Default load on first render
     loadAlbums("John Williams"); // composer of Imperial March
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function getSpotifyToken() {
